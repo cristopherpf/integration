@@ -8,10 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 
-import lombok.Builder;
-
 @Entity
-@Builder
 public class Person {
 
 	@Id

@@ -22,11 +22,11 @@ import com.study.integration.repositories.PersonRepository;
 @ExtendWith(MockitoExtension.class)
 public class PersonServiceTest {
 
-	//@InjectMocks creates an instance of the class and injects the mocks that are marked with the annotations @Mock into it.
+	//Creates an instance of the class and injects the mocks that are marked with the annotations @Mock into it.
 	@InjectMocks
     private PersonService service;
 
-	//@Mock creates a mock(imitation) implementation for the classes you need.
+	//Creates a mock(imitation) implementation for the classes you need.
     @Mock
     private PersonRepository repository;
     
@@ -44,7 +44,7 @@ public class PersonServiceTest {
         final Person actual = service.save(personToSave);
 
         // Assert
-        //RecursiveComparison field by field comparison
+        //RecursiveComparison: field by field comparison
         assertThat(actual).usingRecursiveComparison().isEqualTo(personToSave);
         verify(repository, times(1)).save(any(Person.class));
         verifyNoMoreInteractions(repository);

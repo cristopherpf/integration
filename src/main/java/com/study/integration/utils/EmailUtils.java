@@ -2,9 +2,6 @@ package com.study.integration.utils;
 
 import java.util.regex.Pattern;
 
-import lombok.extern.log4j.Log4j;
-
-@Log4j
 public class EmailUtils {
 	
 	final static String REGEX_PATTERN = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
@@ -12,7 +9,7 @@ public class EmailUtils {
 	
 	public static boolean isValid(String emailAddress) {
 	    return Pattern.compile(REGEX_PATTERN)
-	      .matcher(emailAddress)
-	      .matches();
+	                  .matcher(emailAddress)
+	                  .matches();
 	}
 }
