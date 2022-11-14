@@ -24,7 +24,7 @@ import com.study.integration.repositories.PersonRepository;
 
 @SpringBootTest
 @ExtendWith(MockitoExtension.class)
-@TestPropertySource(locations={"classpath:application.properties"})
+@TestPropertySource(locations={"file:./src/test/resources/application.properties"})
 public class PersonServiceTest {
 
 	//Creates an instance of the class and injects the mocks that are marked with the annotations @Mock into it.
