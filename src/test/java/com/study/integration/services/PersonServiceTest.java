@@ -7,6 +7,7 @@ import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.verifyNoMoreInteractions;
 import static org.mockito.Mockito.when;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
 
@@ -68,7 +69,10 @@ public class PersonServiceTest {
     @Test
     void should_find_all_persons() {
         // Arrange
-        when(repository.findAll()).thenReturn(List.of(new Person(), new Person()));
+    	List<Person> persons = new ArrayList<>();
+		persons.add(createPerson());
+		persons.add(createPerson());
+        when(repository.findAll()).thenReturn(persons);
 
         // Act & Assert
         assertThat(service.findAll()).hasSize(2);
