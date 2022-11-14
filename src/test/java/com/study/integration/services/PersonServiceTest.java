@@ -21,6 +21,7 @@ import com.study.integration.entities.Person;
 import com.study.integration.repositories.PersonRepository;
 
 @ExtendWith(MockitoExtension.class)
+//@TestPropertySource(locations = "classpath:application.properties")
 public class PersonServiceTest {
 
 	//Creates an instance of the class and injects the mocks that are marked with the annotations @Mock into it.
