@@ -16,13 +16,15 @@ import org.junit.jupiter.api.extension.ExtendWith;
 import org.mockito.InjectMocks;
 import org.mockito.Mock;
 import org.mockito.junit.jupiter.MockitoExtension;
+import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.test.context.TestPropertySource;
 
 import com.study.integration.entities.Person;
 import com.study.integration.repositories.PersonRepository;
 
+@SpringBootTest
 @ExtendWith(MockitoExtension.class)
-@TestPropertySource(locations = "classpath:application.properties")
+@TestPropertySource(locations={"classpath:application.properties"})
 public class PersonServiceTest {
 
 	//Creates an instance of the class and injects the mocks that are marked with the annotations @Mock into it.

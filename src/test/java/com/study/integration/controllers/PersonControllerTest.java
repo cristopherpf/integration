@@ -30,7 +30,7 @@ import com.study.integration.services.PersonService;
 
 @SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 @AutoConfigureMockMvc
-@TestPropertySource(locations = "classpath:application.properties")
+@TestPropertySource(locations={"classpath:application.properties"})
 public class PersonControllerTest {
 
 	@Autowired
