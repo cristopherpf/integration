@@ -1,12 +1,17 @@
 package com.study.integration.entities;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.Objects;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.OneToMany;
 
 @Entity
 public class Person {
@@ -18,6 +23,8 @@ public class Person {
 	private String name;
 	@Column(nullable = false, unique = true)
 	private String email;
+	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "person")
+	private List<AvailableSchedule> availableSchedules = new ArrayList<AvailableSchedule>();
 	
 	public Person() {}
 
@@ -51,6 +58,18 @@ public class Person {
 		this.email = email;
 	}
 	
+	public List<AvailableSchedule> getAvailableSchedules() {
+		return availableSchedules;
+	}
+
+	public void setAvailableSchedules(List<AvailableSchedule> availableSchedules) {
+		this.availableSchedules = availableSchedules;
+	}
+
+	public void addSchedule(AvailableSchedule availableSchedule) {
+		availableSchedules.add(availableSchedule);
+	}
+
 	@Override
 	public int hashCode() {
 		return Objects.hash(email, id, name);
