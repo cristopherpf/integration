@@ -14,6 +14,7 @@ import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 
+import com.study.integration.entities.AvailableSchedule;
 import com.study.integration.entities.Person;
 import com.study.integration.services.PersonService;
 
@@ -50,5 +51,10 @@ public class PersonController {
 			return new ResponseEntity<Person>(person.get(), HttpStatus.OK);
 		else
 		    return new ResponseEntity<>(HttpStatus.NOT_FOUND);
-	}	
+	}
+	
+	@PostMapping(value = "/defaultavailableschedule/{id}")
+	public ResponseEntity<List<AvailableSchedule>> createDefaultAvailableSchedule(@PathVariable Long id) throws Exception {
+		return new ResponseEntity<List<AvailableSchedule>>(service.createDefaultAvailableSchedule(id), HttpStatus.CREATED);
+	}
 }
