@@ -1,4 +1,4 @@
-# Study project with Spring
+# Study project with Spring boot
 
 ## Docker
 ## CI/CD
