@@ -12,11 +12,11 @@ public class ApplicationExceptionHandler extends ResponseEntityExceptionHandler 
 
 	@ExceptionHandler(Exception.class)
 	public ResponseEntity<ErrorMessage> handleException(Exception e) {
-		return new ResponseEntity<>(new ErrorMessage(HttpStatus.BAD_REQUEST.value(), "Error: " + e.getMessage()), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(new ErrorMessage(HttpStatus.BAD_REQUEST.value(), "Erro: " + e.getMessage()), HttpStatus.BAD_REQUEST);
 	}
 	
 	@ExceptionHandler(ConstraintViolationException.class)
 	public ResponseEntity<ErrorMessage> handleConstraintException(Exception e) {
-		return new ResponseEntity<>(new ErrorMessage(HttpStatus.BAD_REQUEST.value(), "Error: Valor deve ser unico."), HttpStatus.BAD_REQUEST);
+		return new ResponseEntity<>(new ErrorMessage(HttpStatus.BAD_REQUEST.value(), "Erro: Valor deve ser unico."), HttpStatus.BAD_REQUEST);
 	}
 }
