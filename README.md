@@ -1,4 +1,4 @@
-# Study project with Spring - Schedules
+# Study project with Spring (Schedules)
 
 ##Devops
 -CI/CD (Github Actions/Kubernetes)
