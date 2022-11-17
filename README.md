@@ -1,39 +1,39 @@
 # Study project with Spring (Schedules)
 
-##Devops
--CI/CD (Github Actions/Kubernetes)
--Testes de integração e unitários (Resttemplate, Mockmvc, Mockito)
--Code analysis, security, quality (SonarQube/Github)
--Docker
+## DevOps
+- CI/CD (Github Actions/Kubernetes)
+- Testes de integração e unitários (Resttemplate, Mockmvc, Mockito)
+- Code analysis, security, quality (SonarQube/Github)
+- Docker
 
-##Conceitos
--Microservices
--Design patterns
--DDD
--TDD
--DTO
+## Conceitos
+- Microservices
+- Design patterns
+- DDD
+- TDD
+- DTO
 
-##Frameworks
--Jackson/Fast Json (Manipulação de Json)
--Elasticsearch
--Spring security
--Maven profiles
--Spring data (JPA/Hibernate)
--ModelMapper (DTO to entity)
+## Frameworks
+- Jackson/Fast Json (Manipulação de Json)
+- Elasticsearch
+- Spring security
+- Maven profiles
+- Spring data (JPA/Hibernate)
+- ModelMapper (DTO to entity)
 
-##Integration
--REST
--Graphql
--GRPC
+## Integração
+- REST
+- Graphql
+- GRPC
 
-##Outras Tecnologias
--Kafka / RabbitMQ (menssageria)
--Heroku
--Auth microservice (Single sign-on autenticação unica)
--Oauth 2.0
--JSON Web Tokens
+## Outras Tecnologias
+- Kafka / RabbitMQ (menssageria)
+- Heroku
+- Auth microservice (Single sign-on autenticação unica)
+- Oauth 2.0
+- JSON Web Tokens
 
-##Links
+## Links
 Code Analisys<br>
 https://sonarcloud.io/summary/overall?id=cristopherpf_integration
 <br><br>
