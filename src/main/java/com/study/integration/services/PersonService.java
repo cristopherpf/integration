@@ -3,40 +3,19 @@ package com.study.integration.services;
 import java.util.List;
 import java.util.Optional;
 
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.stereotype.Service;
-
-import com.study.integration.controllers.exceptions.EmailNotValidException;
 import com.study.integration.entities.Person;
-import com.study.integration.repositories.PersonRepository;
-import com.study.integration.utils.EmailUtils;
 
-@Service
-public class PersonService {
+public interface PersonService {
 
-	@Autowired
-	private PersonRepository repository;
+	Optional<Person> findById(Long id);
 	
-	public Person save(Person person) throws EmailNotValidException {
-		if(!EmailUtils.isValid(person.getEmail()))
-			throw new EmailNotValidException(person.getEmail());
-		
-		return repository.save(person);
-	}
-
-	public void delete(Person person) {
-		repository.delete(person);
-	}
+	Optional<Person> findByName(String name);
 	
-	public List<Person> findAll() {
-		return repository.findAll();
-	}
+	Optional<Person> findByEmail(String email);
 	
-	public Optional<Person> findById(Long id) {
-		return repository.findById(id);
-	}
+	List<Person> findAll();
 	
-	public Optional<Person> findByName(String name) {
-		return repository.findByName(name);
-	}
+	Person save(Person person);
+	
+	void delete(Person person);
 }

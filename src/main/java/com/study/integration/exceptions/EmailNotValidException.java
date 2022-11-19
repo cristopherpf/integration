@@ -1,6 +1,6 @@
-package com.study.integration.controllers.exceptions;
+package com.study.integration.exceptions;
 
-public class EmailNotValidException extends Exception {
+public class EmailNotValidException extends RuntimeException {
 
 	private static final long serialVersionUID = 1L;
 

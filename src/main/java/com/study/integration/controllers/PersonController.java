@@ -14,8 +14,8 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
-import com.study.integration.controllers.exceptions.PersonNotFoundException;
 import com.study.integration.entities.Person;
+import com.study.integration.exceptions.PersonNotFoundException;
 import com.study.integration.services.PersonService;
 
 @RestController
@@ -26,7 +26,7 @@ public class PersonController {
 	private PersonService service;
 	
 	@PostMapping
-	public ResponseEntity<Person> insert(@RequestBody Person person) throws Exception {
+	public ResponseEntity<Person> insert(@RequestBody Person person) {
 		return new ResponseEntity<Person>(service.save(person), HttpStatus.CREATED);
 	}
 	
