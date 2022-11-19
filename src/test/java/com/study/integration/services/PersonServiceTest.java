@@ -24,7 +24,7 @@ import com.study.integration.repositories.PersonRepository;
 
 @SpringBootTest
 @TestInstance(Lifecycle.PER_CLASS)
-public class PersonServiceTest {
+class PersonServiceTest {
 
 	@Autowired
     private PersonService service;
@@ -33,7 +33,7 @@ public class PersonServiceTest {
     private PersonRepository repository;
     
     @BeforeAll
-	public void setUp() {
+	void setUp() {
     	BDDMockito.given(repository.findById(Mockito.anyLong())).willReturn(Optional.of(new Person()));
     	BDDMockito.given(repository.findByName(Mockito.anyString())).willReturn(Optional.of(new Person()));
     	BDDMockito.given(repository.findByEmail(Mockito.anyString())).willReturn(Optional.of(new Person()));

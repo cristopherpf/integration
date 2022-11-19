@@ -20,7 +20,7 @@ import com.study.integration.utils.DateUtils;
 
 @SpringBootTest
 @TestInstance(Lifecycle.PER_CLASS)
-public class AvailableScheduleRepositoryTest {
+class AvailableScheduleRepositoryTest {
 
 	private static final String PERSON_NAME = "Person Test";
 	private static final String PERSON_EMAIL = "person@test.com";
@@ -33,7 +33,7 @@ public class AvailableScheduleRepositoryTest {
 	private AvailableScheduleRepository availableScheduleRepository;
 	
 	@BeforeAll
-	public void setUp() {
+	void setUp() {
 		Person person = new Person(PERSON_NAME, PERSON_EMAIL);
 		person = personRepository.save(person);
 		this.personId = person.getId();
@@ -50,19 +50,19 @@ public class AvailableScheduleRepositoryTest {
 	}
 	
 	@AfterAll
-	public void tearDown() {
+	void tearDown() {
 		availableScheduleRepository.deleteAll();
 		personRepository.deleteAll();
 	}
 	
 	@Test
-	public void should_find_byPersonId() {
+	void should_find_byPersonId() {
 		List<AvailableSchedule> schedules = availableScheduleRepository.findByPersonId(personId);
-		assertEquals(schedules.size(), 2);
+		assertEquals(2, schedules.size());
 	}
 	
 	@Test
-	public void should_not_find_byPersonId() {
+	void should_not_find_byPersonId() {
 		List<AvailableSchedule> schedules = availableScheduleRepository.findByPersonId(-1L);
 		assertThat(schedules.isEmpty());
 	}

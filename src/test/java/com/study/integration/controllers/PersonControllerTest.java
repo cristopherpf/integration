@@ -34,7 +34,7 @@ import com.study.integration.services.PersonService;
 @ExtendWith(SpringExtension.class)
 @AutoConfigureMockMvc
 @TestPropertySource(locations={"classpath:application.properties"})
-public class PersonControllerTest {
+class PersonControllerTest {
 
 	@Autowired
 	private MockMvc mvc;
@@ -49,7 +49,7 @@ public class PersonControllerTest {
 	}
 	
 	@Test
-	public void should_create_person() throws Exception {
+	void should_create_person() throws Exception {
 		Person person = createPerson();
 		
 		String json = mapper.writeValueAsString(person);
@@ -69,7 +69,7 @@ public class PersonControllerTest {
 	}
 	
 	@Test
-	public void should_find_person_byId() throws Exception {
+	void should_find_person_byId() throws Exception {
 		Long id = 1L;
 		Person person = createPerson();
 		person.setId(id);
@@ -84,7 +84,7 @@ public class PersonControllerTest {
 	}
 	
 	@Test
-	public void should_find_all_persons() throws Exception {
+	void should_find_all_persons() throws Exception {
 		List<Person> persons = new ArrayList<>();
 		persons.add(createPerson());
 		

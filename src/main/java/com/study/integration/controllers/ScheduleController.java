@@ -22,7 +22,7 @@ public class ScheduleController {
 	private ScheduleService service;
 	
 	@PostMapping(value = "/createdefault")
-	public ResponseEntity<List<AvailableSchedule>> createDefaultAvailableSchedule(@RequestBody GenericDTO person) throws Exception {
+	public ResponseEntity<List<AvailableSchedule>> createDefaultAvailableSchedule(@RequestBody GenericDTO person) {
 		return new ResponseEntity<List<AvailableSchedule>>(service.saveDefaultAvailableSchedule(person.getId()), HttpStatus.CREATED);
 	}
 }
