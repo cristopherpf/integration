@@ -26,7 +26,7 @@ public class ScheduleServiceImpl implements ScheduleService {
 	public static final Integer DEFAULT_INITIAL_HOUR = 8;
 	public static final Integer DEFAULT_FINAL_HOUR = 18;
 	
-	private Logger logger = LoggerFactory.getLogger(PersonServiceImpl.class);
+	private Logger logger = LoggerFactory.getLogger(ScheduleServiceImpl.class);
 	
 	@Autowired
 	private AvailableScheduleRepository repository;
