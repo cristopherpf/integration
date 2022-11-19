@@ -12,7 +12,6 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
-import javax.validation.constraints.Email;
 
 @Entity
 public class Person {
@@ -22,7 +21,6 @@ public class Person {
 	private Long id;
 	@Column(nullable = false, unique = true)
 	private String name;
-	@Email
 	@Column(nullable = false, unique = true)
 	private String email;
 	@OneToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER, mappedBy = "person")

@@ -2,6 +2,7 @@ package com.study.integration.services;
 
 import static org.assertj.core.api.Assertions.assertThat;
 import static org.junit.jupiter.api.Assertions.assertNotNull;
+import static org.junit.jupiter.api.Assertions.assertThrows;
 
 import java.util.ArrayList;
 import java.util.List;
@@ -64,16 +65,16 @@ public class PersonServiceTest {
         assertNotNull(persons);
     }
     
-    @Test
-    void should_save() throws EmailNotValidException {
+    /*@Test
+    void should_save() {
         Person person = service.save(new Person("Person Test", "person@test.com"));
         assertNotNull(person);
-    }
+    }*/
     
-    /*@Test
+    @Test
     void should_not_save_when_invalidEmail() {
     	assertThrows(EmailNotValidException.class,
     	           	 () -> {service.save(new Person("Person Test", "invalidemail"));}
     	);
-    }*/
+    }
 }

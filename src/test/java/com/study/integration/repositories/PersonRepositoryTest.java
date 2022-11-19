@@ -46,7 +46,7 @@ public class PersonRepositoryTest {
 	@Test
 	public void should_not_find_byName_when_invalid() {
 		Optional<Person> person = repository.findByName("Invalid name");
-		assertThat(person.isEmpty());
+		assertThat(!person.isPresent());
 	}
 	
 	@Test
@@ -59,7 +59,7 @@ public class PersonRepositoryTest {
 	@Test
 	public void should_not_find_byEmail_when_invalid() {
 		Optional<Person> person = repository.findByName("invalid@email.com");
-		assertThat(person.isEmpty());
+		assertThat(!person.isPresent());
 	}
 	
 	@Test
@@ -72,7 +72,7 @@ public class PersonRepositoryTest {
 	@Test
 	public void should_not_find_byNameOrEmail_when_invalid() {
 		Optional<Person> person = repository.findByNameOrEmail("Invalid name", "invalid@email.com");
-		assertThat(person.isEmpty());
+		assertThat(!person.isPresent());
 	}
 	
 	@Test

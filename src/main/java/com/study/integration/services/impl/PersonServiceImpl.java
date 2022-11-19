@@ -9,8 +9,10 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import com.study.integration.entities.Person;
+import com.study.integration.exceptions.EmailNotValidException;
 import com.study.integration.repositories.PersonRepository;
 import com.study.integration.services.PersonService;
+import com.study.integration.utils.EmailUtils;
 
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -43,8 +45,8 @@ public class PersonServiceImpl implements PersonService {
 	@Override
 	public Person save(Person person) {
 		logger.info("Salvando pessoa {}", person);
-		/*if(!EmailUtils.isValid(person.getEmail()))
-			throw new EmailNotValidException(person.getEmail());*/
+		if(!EmailUtils.isValid(person.getEmail()))
+			throw new EmailNotValidException(person.getEmail());
 		
 		return repository.save(person);
 	}
