@@ -1,4 +1,4 @@
-package com.study.integration.controllers.exceptions;
+package com.study.integration.exceptions;
 
 public class ErrorMessage {
 

@@ -1,4 +1,6 @@
-# Study project with Spring (Schedules)
+# Study project with Spring
+
+![Tests Workflow](https://github.com/cristopherpf/integration/actions/workflows/maven.yml/badge.svg)
 
 ## DevOps
 - CI/CD (Github Actions/Kubernetes)
