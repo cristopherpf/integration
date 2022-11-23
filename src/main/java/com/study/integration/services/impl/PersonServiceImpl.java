@@ -11,8 +11,8 @@ import org.springframework.stereotype.Service;
 import com.study.integration.entities.Person;
 import com.study.integration.exceptions.EmailNotValidException;
 import com.study.integration.repositories.PersonRepository;
+import com.study.integration.services.EmailService;
 import com.study.integration.services.PersonService;
-import com.study.integration.utils.EmailUtils;
 
 @Service
 public class PersonServiceImpl implements PersonService {
@@ -21,6 +21,8 @@ public class PersonServiceImpl implements PersonService {
 	
 	@Autowired
 	private PersonRepository repository;
+	@Autowired
+	private EmailService emailService;
 
 	@Override
 	public Optional<Person> findById(Long id) {
@@ -45,7 +47,7 @@ public class PersonServiceImpl implements PersonService {
 	@Override
 	public Person save(Person person) {
 		logger.info("Salvando pessoa {}", person);
-		if(!EmailUtils.isValid(person.getEmail()))
+		if(!emailService.isValid(person.getEmail()))
 			throw new EmailNotValidException(person.getEmail());
 		
 		return repository.save(person);

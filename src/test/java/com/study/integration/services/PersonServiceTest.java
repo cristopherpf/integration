@@ -26,9 +26,16 @@ import com.study.integration.repositories.PersonRepository;
 @TestInstance(Lifecycle.PER_CLASS)
 class PersonServiceTest {
 
+	private static final String PERSON_NAME = "Person Test";
+	private static final String VALID_EMAIL = "person@test.com";
+	private static final String INVALID_EMAIL = "invalidemail";
+	
 	@Autowired
     private PersonService service;
 
+	@MockBean
+    private EmailService emailService;
+	
 	@MockBean
     private PersonRepository repository;
     
@@ -38,6 +45,9 @@ class PersonServiceTest {
     	BDDMockito.given(repository.findByName(Mockito.anyString())).willReturn(Optional.of(new Person()));
     	BDDMockito.given(repository.findByEmail(Mockito.anyString())).willReturn(Optional.of(new Person()));
     	BDDMockito.given(repository.findAll()).willReturn(new ArrayList<Person>());
+    	
+    	
+    	//BDDMockito.given(emailService.isValid(INVALID_EMAIL)).willThrow(EmailNotValidException.class);
     	BDDMockito.given(repository.save(Mockito.any(Person.class))).willReturn(new Person());
 	}
     
@@ -49,13 +59,13 @@ class PersonServiceTest {
     
     @Test
     void should_find_byName() {
-    	Optional<Person> person = service.findByName("Person Test");
+    	Optional<Person> person = service.findByName(PERSON_NAME);
     	assertThat(person.isPresent());
     }
     
     @Test
     void should_find_byEmail() {
-    	Optional<Person> person = service.findByEmail("person@test.com");
+    	Optional<Person> person = service.findByEmail(VALID_EMAIL);
     	assertThat(person.isPresent());
     }
 
@@ -65,17 +75,18 @@ class PersonServiceTest {
         assertNotNull(persons);
     }
     
-    //TODO: Refactoring save test
     /*@Test
     void should_save() {
-        Person person = service.save(new Person("Person Test", "person@test.com"));
+    	//BDDMockito.given(emailService.isValid(Mockito.anyString())).willReturn(true);
+        Person person = service.save(new Person());
+        //System.out.println(person);
         assertNotNull(person);
     }*/
     
     @Test
     void should_not_save_when_invalidEmail() {
     	assertThrows(EmailNotValidException.class,
-    	           	 () -> {service.save(new Person("Person Test", "invalidemail"));}
+    	           	 () -> {service.save(new Person(PERSON_NAME, INVALID_EMAIL));}
     	);
     }
 }
