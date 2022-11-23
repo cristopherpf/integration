@@ -13,15 +13,15 @@ public class EmailServiceImpl implements EmailService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 	
-	private static final String REGEX_PATTERN = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
-	        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
+	private static final String LOCAL_REGEX_PATTERN = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" ;
+	private static final String DOMAIN_REGEX_PATTERN = "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
 	
 	public boolean isValid(String emailAddress) {
 		logger.info("E-mail validado: {}", emailAddress);
 	    if(emailAddress == null)
 	    	return false;
 	    
-		return Pattern.compile(REGEX_PATTERN)
+		return Pattern.compile(LOCAL_REGEX_PATTERN + DOMAIN_REGEX_PATTERN)
 	                  .matcher(emailAddress)
 	                  .matches();
 	}
