@@ -13,7 +13,7 @@ public class EmailServiceImpl implements EmailService {
 	
 	private static final Logger logger = LoggerFactory.getLogger(EmailServiceImpl.class);
 	
-	private final static String REGEX_PATTERN = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
+	private static final String REGEX_PATTERN = "^(?=.{1,64}@)[A-Za-z0-9_-]+(\\.[A-Za-z0-9_-]+)*@" 
 	        + "[^-][A-Za-z0-9-]+(\\.[A-Za-z0-9-]+)*(\\.[A-Za-z]{2,})$";
 	
 	public boolean isValid(String emailAddress) {
