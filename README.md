@@ -1,11 +1,13 @@
 # Study project with Spring
 
 ![Tests Workflow](https://github.com/cristopherpf/integration/actions/workflows/maven.yml/badge.svg)
+<br>
+[![Sonar Quality Gate Badge](https://sonarcloud.io/api/project_badges/measure?project=cristopherpf_integration&metric=alert_status)](https://sonarcloud.io/dashboard?id=cristopherpf_integration)
 
 ## DevOps
 - CI/CD (Github Actions/Kubernetes)
-- Testes de integração e unitários (Resttemplate, Mockmvc, Mockito)
-- Code analysis, security, quality (SonarQube/Github)
+- Testes de integração e unitários (RestTemplate, Mockmvc, Mockito)
+- Code analysis, security, quality (SonarQube/SonarCloud/Github)
 - Docker
 
 ## Conceitos
@@ -13,7 +15,7 @@
 - Design patterns
 - DDD
 - TDD
-- DTO
+- Multi Tenancy
 
 ## Frameworks
 - Jackson/Fast Json (Manipulação de Json)
@@ -27,6 +29,12 @@
 - REST
 - Graphql
 - GRPC
+
+## Design Patterns
+- MVC
+- DTO
+- Dependency Injection
+- Inversion of Control
 
 ## Outras Tecnologias
 - Kafka / RabbitMQ (menssageria)
