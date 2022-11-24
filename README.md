@@ -2,7 +2,7 @@
 
 ![Tests Workflow](https://github.com/cristopherpf/integration/actions/workflows/maven.yml/badge.svg)
 <br>
-![Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cristopherpf_integration&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cristopherpf_integration)
+![[Quality Gate Status](https://sonarcloud.io/api/project_badges/measure?project=cristopherpf_integration&metric=alert_status)](https://sonarcloud.io/summary/new_code?id=cristopherpf_integration)
 
 ## DevOps
 - CI/CD (Github Actions/Kubernetes)
